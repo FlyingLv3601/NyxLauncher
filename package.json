@@ -1,0 +1,53 @@
+{
+  "name": "nyxlauncher",
+  "version": "1.0.0",
+  "description": "Nyx Launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "dist": "electron-builder --publish=never"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "systeminformation": "^5.27.11",
+    "minecraft-launcher-core": "^3.18.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.nyx.launcher",
+    "productName": "NyxLauncher",
+    "directories": {
+      "output": "apps/dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/**/*.{md,markdown}",
+      "!node_modules/**/*.{ts,map}",
+      "!node_modules/**/.bin",
+      "!node_modules/**/test",
+      "!node_modules/**/tests",
+      "!node_modules/**/example",
+      "!node_modules/**/examples",
+      "!dist/**/*",
+      "!*.log",
+      "!*.md",
+      "!.gitignore"
+    ],
+    "asar": false,
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

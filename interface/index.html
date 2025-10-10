@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NyxLauncher</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+
+
+
+    <div class="wrapper">
+
+        <div class="welcome">
+            <h6>welcome, <span id="username"></span></h6>
+        </div>
+        <div class="loading">
+            <h6>loading...</h6>
+        </div>
+        <div class="logo">
+                      PY^.. ?Y!!!!YPY
+                      PY^^^G?B.    JP
+                      #:    ^@G     !G
+                     ~B      5^     .&
+                    .B.              J5
+                   ~G.   .       .    PJ
+                .~Y7    YP       G^    ?5:
+            ^~7?7^    :PBP       B#!    .?Y!:
+            #:      .JY.~G       B^?5:     :!7P.
+            #.    :JJ.  ~G       B. .?J^      B^
+            #. .7BG7::^:YG       B7:::~5B5~   G^
+            #. .::.::::::.       .:::::.:::.  G^
+            #.                                G^
+            B7~!~~~!?7:              .!?7~~~!~B:
+                .^JPJ:       .        .!PY~.
+              .!J7:        ^JJY?.        .!J7.
+           .!J7:        :?J~   .7J~         .!J7:
+         ?J!.        :7J!.        ^JJ^         .!B.
+         JP.      .7J!.             .!J7:       ?5
+          .PJ  .7J!.                   .7J7.   ^B
+            ~PJ7.                         .7J!:#:
+
+
+        </div>
+        <div class="menu">
+            <div class="main-logo">
+                NyxLauncher
+            </div>
+            <main>
+                <span id="os">os:  </span>
+                <span id="pc-nickname">nickname:</span>   
+                <span id="GPU">GPU:</span>
+                <span id="CPU">CPU:</span>
+                <span id="RAM">RAM:</span>
+                <span id="McUsername">minecraft-username:</span>
+                <span id="Mcversion">minecraft-version:</span>
+                <span id="mod_loader">mod-loader:</span>
+            </main>
+            <div class="user-input">
+                <span>nyx:></span><input type="text" placeholder="enter command" autofocus id="user-input">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+
+
+    const userInput = document.getElementById("user-input");
+
+    const notifications = document.getElementById("nots"); 
+
+
+
+        userInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        const value = userInput.value.trim();
+
+        window.api.logInput(value);
+        userInput.value = '';
+
+        }
+    
+    });
+
+
+    async function introtext() {
+        const response = await fetch('../data/data.json');
+        const data = await response.json();
+        return data.nickname;
+    }
+
+
+
+    introtext().then(nickname => {
+        document.getElementById("username").textContent = nickname;
+    });
+    </script>
+</html>

@@ -1,4 +1,5 @@
-<body style="    font-family: monospace; displat:flex;align-items:center;">
+<body style="    font-family: monospace; displat:flex;    justify-content: center;
+    align-items: center;">
     <pre style="
     font-size: 13px;
     line-height: 1.1;
@@ -45,5 +46,6 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 

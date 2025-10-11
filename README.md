@@ -1,9 +1,15 @@
-<body style="    font-family: monospace; displat:flex;    justify-content: center;
-    align-items: center;">
+<body style="font-family: monospace;">
     <pre style="
+    color: rgb(215, 215, 215);
     font-size: 13px;
     line-height: 1.1;
-    text-align: center;
+    white-space: pre;
+    padding: 20px;
+    width: 300px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 ">
                       PY^.. ?Y!!!!YPY
                       PY^^^G?B.    JP
@@ -46,6 +52,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 

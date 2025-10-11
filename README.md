@@ -1,5 +1,5 @@
 <body style="font-family: monospace;">
-    <pre style="
+    <div style="
     color: rgb(215, 215, 215);
     font-size: 13px;
     line-height: 1.1;
@@ -33,7 +33,7 @@
           .PJ  .7J!.                   .7J7.   ^B
             ~PJ7.                         .7J!:#:
 
-</pre>
+</div>
 
 
 
@@ -52,6 +52,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 

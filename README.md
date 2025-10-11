@@ -29,7 +29,7 @@ JP.      .7J!.             .!J7:       ?5
 
 
 
-<p style="font-size: 60px;" align="center">NYXLAUNCHER</p>
+<p style="font-size: 160px;" align="center">NYXLAUNCHER</p>
 <p style="font-size: 20px;" align="center">
 Minecraft launcher designed like Arch terminal <br>
 Project was started on 09.10.25
@@ -48,6 +48,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 

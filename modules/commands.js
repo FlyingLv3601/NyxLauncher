@@ -1,6 +1,6 @@
-const flags = ["-n", "-v", "-r"];
+const flags = ["-n", "-v", "-r", "-bg", "-color", "-secColor"];
 
 
-const commands = ['-discord', '-youtube', "mcStart", "userCr", "kill"]
+const commands = ["mcStart", "userCr", "kill", "lSet", "Theme"]
 
 module.exports = {flags, commands}

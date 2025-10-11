@@ -1,9 +1,12 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
-const {mcLauncher} = require("./modules/minecraft-launcher.js")
-const {userData} = require("./modules/createPlayer.js");
 const fs = require("fs");
-const {flags, commands} = require("./modules/commands.js");
+
+const { mcLauncher } = require("./modules/minecraft-launcher.js");
+const { userData } = require("./modules/createPlayer.js");
+const { flags, commands } = require("./modules/commands.js");
+const { nyxConfigPath } = require("./modules/path.js");
+const {LauncherSetting} = require("./modules/launcherSettings.js");
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -21,39 +24,42 @@ function createWindow() {
 }
 
 ipcMain.on('log-input', (event, inputValue) => {
-    if(inputValue.startsWith(commands[0])){
-    //discord link in copy
-    }
-    else if(inputValue.startsWith(commands[1])){
-    //youtube link in copy
-    }else if(inputValue.startsWith(commands[2])){
-      if (inputValue.includes(flags[0]) && inputValue.includes(flags[1])){
-        let nick = inputValue.split("-n ")[1].split(" ")[0];
-        let ver = inputValue.split("-v ")[1].split(" ")[0];
-        mcLauncher(nick, ver);
-      }else{
-        const userData = require("./data/data.json");
+  const jsonPath = path.join(nyxConfigPath, "data.json");
 
-        const username = userData.nickname;
-        const version = userData.version;
-        console.log(username);
-        console.log(version)
-        mcLauncher(username, version)
+  if (inputValue.startsWith(commands[0])) {
+    if (inputValue.includes(flags[0]) && inputValue.includes(flags[1]) || inputValue.includes(flags[1]) && inputValue.includes(flags[0])) {
+      const nick = inputValue.split("-n ")[1].split(" ")[0];
+      const ver = inputValue.split("-v ")[1].split(" ")[0];
+      mcLauncher(nick, ver);
+    } else {
+      if (fs.existsSync(jsonPath)) {
+        const rawData = fs.readFileSync(jsonPath, "utf8");
+        const savedData = JSON.parse(rawData);
+
+        const username = savedData.nickname;
+        const version = savedData.version;
+
+        mcLauncher(username, version);
       }
-    }else if(inputValue.startsWith(commands[3])){
-      let nick = inputValue.split("-n ")[1].split(" ")[0];
-      let ver = inputValue.split("-v ")[1].split(" ")[0];
-      
-      fs.access("data.json", fs.constants.F_OK, (err) => {
-          userData(nick, ver);    
-      });
-
-    }else if(inputValue.startsWith(commands[4])){//kill
-      app.quit()
-    }else{
-      //error not
     }
+
+
+  } else if (inputValue.startsWith(commands[1])) {
+    const nick = inputValue.split("-n ")[1].split(" ")[0];
+    const ver = inputValue.split("-v ")[1].split(" ")[0];
+
+    userData(nick, ver);
+
+  } else if (inputValue.startsWith(commands[2])) {
+    app.quit();
+  } else if (inputValue.startsWith(commands[3])) {
+      const ram = inputValue.split("-r ")[1].split(" ")[0];
+      LauncherSetting(ram);
+  }
 });
 
 app.whenReady().then(createWindow);
 
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});

@@ -1,6 +1,15 @@
 const { Client, Authenticator } = require('minecraft-launcher-core');
 const path = require('path');
 const os = require('os');
+const fs = require('fs');
+
+
+const {nyxConfigPath} = require("./path.js");
+
+
+
+
+
 
 function getMinecraftDir() {
     const platform = os.platform();
@@ -14,6 +23,16 @@ function getMinecraftDir() {
 }
 
 function mcLauncher(username, version) {
+
+
+    const jsonPath = path.join(nyxConfigPath, "config.json");
+    const rawData = fs.readFileSync(jsonPath, "utf8");
+    const savedData = JSON.parse(rawData);
+
+    const ram = savedData.ram;
+
+
+
     const launcher = new Client();
 
     const minecraftDir = getMinecraftDir();
@@ -27,8 +46,8 @@ function mcLauncher(username, version) {
             type: "release"
         },
         memory: {
-            max: "6048M",
-            min: "1024M"
+            max: ram,
+            min: "1024"
         }
     };
 

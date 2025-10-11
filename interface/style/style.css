@@ -19,7 +19,7 @@ body {
     display: flex;
     flex-direction: row;
     height: 480px;
-    background-color: rgb(41, 40, 40);
+    background-color: rgb(41, 40, 41);
 }
 
 .logo{
@@ -140,3 +140,4 @@ main{
 #nots{
     opacity: .7;
 }
+

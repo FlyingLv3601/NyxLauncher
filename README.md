@@ -1,9 +1,9 @@
-<body style="font-family: monospace;" align="center">
+<body style="font-family: monospace;">
     <pre style="
     font-size: 13px;
     line-height: 1.1;
     text-align: center;
-">
+"  align="center">
                       PY^.. ?Y!!!!YPY
                       PY^^^G?B.    JP
                       #:    ^@G     !G
@@ -47,6 +47,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 

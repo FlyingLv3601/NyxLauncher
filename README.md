@@ -1,5 +1,6 @@
 <body style="font-family: monospace;">
     <div style="
+        text-align:center;
     color: rgb(215, 215, 215);
     font-size: 13px;
     line-height: 1.1;
@@ -8,15 +9,15 @@
     width: 300px;
     height: 480px;
 ">
-                      PY^.. ?Y!!!!YPY<br>
-                      PY^^^G?B.    JP<br>
-                      #:    ^@G     !G<br>
-                     ~B      5^     .&<br>
-                    .B.              J5<br>
-                   ~G.   .       .    PJ<br>
-                .~Y7    YP       G^    ?5:<br>
-            ^~7?7^    :PBP       B#!    .?Y!:<br>
-            #:      .JY.~G       B^?5:     :!7P.<br>
+                      PY^.. ?Y!!!!YPY
+                      PY^^^G?B.    JP
+                      #:    ^@G     !G
+                     ~B      5^     .&
+                    .B.              J5
+                   ~G.   .       .    PJ
+                .~Y7    YP       G^    ?5:
+            ^~7?7^    :PBP       B#!    .?Y!:
+            #:      .JY.~G       B^?5:     :!7P.
             #.    :JJ.  ~G       B. .?J^      B^
             #. .7BG7::^:YG       B7:::~5B5~   G^
             #. .::.::::::.       .:::::.:::.  G^
@@ -49,6 +50,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 

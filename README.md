@@ -1,4 +1,4 @@
-<body style="    font-family: monospace;">
+<body style="font-family: monospace;" align="center">
     <pre style="
     font-size: 13px;
     line-height: 1.1;
@@ -47,6 +47,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 

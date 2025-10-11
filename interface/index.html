@@ -19,7 +19,7 @@
         <div class="loading">
             <h6>loading...</h6>
         </div>
-        <div class="logo">
+        <div class="logo" id="logo">
                       PY^.. ?Y!!!!YPY
                       PY^^^G?B.    JP
                       #:    ^@G     !G
@@ -81,6 +81,26 @@
         window.api.logInput(value);
         userInput.value = '';
 
+
+
+        if (value.startsWith("theme")) {
+            const bg = value.split("-bg ")[1]?.split(" ")[0];
+            const color = value.split("-c ")[1]?.split(" ")[0];
+            const secondColor = value.split("-sc ")[1]?.split(" ")[0];
+            
+            
+
+
+            const wrapper = document.getElementsByClassName("wrapper")[0];
+            wrapper.style.backgroundColor = bg;
+            wrapper.style.color = color;
+            docume.getElementById("logo").style.color = secondColor;
+
+            if(value.includes("-save")){
+                window.api.theme(bg, color, secondColor);
+            }
+
+        }
         }
     
     });

@@ -7,6 +7,7 @@ const { userData } = require("./modules/createPlayer.js");
 const { flags, commands } = require("./modules/commands.js");
 const { nyxConfigPath } = require("./modules/path.js");
 const {LauncherSetting} = require("./modules/launcherSettings.js");
+const {themeSave} = require("./modules/saveTheme.js");
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -56,6 +57,10 @@ ipcMain.on('log-input', (event, inputValue) => {
       const ram = inputValue.split("-r ")[1].split(" ")[0];
       LauncherSetting(ram);
   }
+});
+
+ipcMain.on("theme", (event, bg, color, secondColor) => {
+  themeSave(bg, color, secondColor);
 });
 
 app.whenReady().then(createWindow);

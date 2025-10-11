@@ -4,6 +4,8 @@
         max-width:1920px;
         width:100%;
     line-height: 1.1;
+        display:flex;
+        
     text-align: center;
 ">
                       PY^.. ?Y!!!!YPY
@@ -45,5 +47,6 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 

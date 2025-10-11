@@ -1,11 +1,7 @@
 <body style="    font-family: monospace;">
-    <div style="
+    <pre style="
     font-size: 13px;
-        max-width:1920px;
-        width:100%;
     line-height: 1.1;
-        display:flex;
-        
     text-align: center;
 ">
                       PY^.. ?Y!!!!YPY
@@ -29,7 +25,6 @@
          JP.      .7J!.             .!J7:       ?5
           .PJ  .7J!.                   .7J7.   ^B
             ~PJ7.                         .7J!:#:
-</div>
 
 
 
@@ -38,6 +33,11 @@
 Minecraft launcher designed like Arch terminal <br>
 Project was started on 09.10.25
 </p>
+</pre>
+
+
+
+
 <!--commands-->
 
 
@@ -47,6 +47,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 

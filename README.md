@@ -7,9 +7,6 @@
     padding: 20px;
     width: 300px;
     height: 480px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 ">
                       PY^.. ?Y!!!!YPY
                       PY^^^G?B.    JP
@@ -52,6 +49,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 

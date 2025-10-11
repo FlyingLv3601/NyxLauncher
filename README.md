@@ -1,5 +1,6 @@
 <body style="font-family: monospace;">
     <pre style="
+        background:none;
     font-size: 13px;
     line-height: 1.1;
     text-align: center;
@@ -47,6 +48,7 @@ mcStart -n nickname -v version
 
 
 </body>
+
 
 
 
